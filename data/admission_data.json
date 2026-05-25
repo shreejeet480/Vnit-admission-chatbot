@@ -1,0 +1,22 @@
+{
+  "undergraduate": {
+    "b_tech": {
+      "name": "Bachelor of Technology (B.Tech)",
+      "duration": "4 years",
+      "eligibility": [
+        "Passed 10+2 with Physics, Chemistry, and Mathematics",
+        "Minimum 75% in 12th standard (65% for SC/ST)",
+        "Valid JEE Main score"
+      ],
+      "entrance_exam": "JEE Main",
+      "counseling": "JoSAA",
+      "documents_required": [
+        "10th mark sheet",
+        "12th mark sheet",
+        "JEE Main admit card and result",
+        "Category certificate (if applicable)",
+        "Passport-size photographs"
+      ]
+    }
+  }
+}
