@@ -2,20 +2,358 @@
   "undergraduate": {
     "b_tech": {
       "name": "Bachelor of Technology (B.Tech)",
+      "level": "Undergraduate",
       "duration": "4 years",
+      "overview": "B.Tech is a 4-year undergraduate engineering program that provides comprehensive training in various engineering disciplines with hands-on experience and industry exposure.",
       "eligibility": [
         "Passed 10+2 with Physics, Chemistry, and Mathematics",
         "Minimum 75% in 12th standard (65% for SC/ST)",
+        "Top 20 percentile in respective board exams",
         "Valid JEE Main score"
       ],
       "entrance_exam": "JEE Main",
-      "counseling": "JoSAA",
+      "counseling": "JoSAA (Joint Seat Allocation Authority)",
+      "counseling_website": "https://josaa.nic.in",
+      "specializations": [
+        {
+          "name": "Computer Science & Engineering",
+          "code": "CSE",
+          "seats": 120,
+          "cutoff_rank_open": 6000,
+          "placements": "100% placement, Avg: ₹12-15 LPA"
+        },
+        {
+          "name": "Electronics & Communication Engineering",
+          "code": "ECE",
+          "seats": 60,
+          "cutoff_rank_open": 7500,
+          "placements": "95% placement, Avg: ₹10-12 LPA"
+        },
+        {
+          "name": "Electrical Engineering",
+          "code": "EE",
+          "seats": 60,
+          "cutoff_rank_open": 8000,
+          "placements": "90% placement, Avg: ₹9-11 LPA"
+        },
+        {
+          "name": "Mechanical Engineering",
+          "code": "ME",
+          "seats": 60,
+          "cutoff_rank_open": 8500,
+          "placements": "85% placement, Avg: ₹8-10 LPA"
+        },
+        {
+          "name": "Civil Engineering",
+          "code": "CE",
+          "seats": 60,
+          "cutoff_rank_open": 9000,
+          "placements": "80% placement, Avg: ₹7-9 LPA"
+        },
+        {
+          "name": "Chemical Engineering",
+          "code": "CHE",
+          "seats": 60,
+          "cutoff_rank_open": 9500,
+          "placements": "85% placement, Avg: ₹8-10 LPA"
+        }
+      ],
+      "cutoff_category": {
+        "open": "Top 6000-8000",
+        "obc": "Top 15000-18000",
+        "sc": "Top 20000-25000",
+        "st": "Top 25000-30000"
+      },
+      "fee_structure": {
+        "semester_fee": "₹9,000 - ₹15,000 per semester",
+        "total_semesters": 8,
+        "total_fee": "₹72,000 - ₹1,20,000",
+        "payment_schedule": "Each semester",
+        "scholarships": "Merit-based and need-based available"
+      },
       "documents_required": [
         "10th mark sheet",
         "12th mark sheet",
-        "JEE Main admit card and result",
+        "JEE Main admit card",
+        "JEE Main result card",
         "Category certificate (if applicable)",
-        "Passport-size photographs"
+        "Domicile certificate",
+        "Passport-size photographs (4x6 cm)",
+        "Identity proof (Aadhar/PAN/Passport)"
+      ],
+      "admission_process": [
+        "Appear for JEE Main entrance exam",
+        "Receive JEE Main result and rank",
+        "Register on JoSAA portal",
+        "Fill choices and lock preferences",
+        "Participate in seat allocation rounds",
+        "Accept allotted seat",
+        "Upload required documents",
+        "Pay admission fee",
+        "Report for physical verification",
+        "Complete registration"
+      ],
+      "placement_info": {
+        "placement_rate": "85-90%",
+        "avg_package": "₹10-12 LPA",
+        "highest_package": "₹20+ LPA",
+        "top_recruiters": [
+          "Google", "Amazon", "Microsoft", "TCS", "Infosys",
+          "Cognizant", "Goldman Sachs", "Flipkart", "Walmart"
+        ]
+      }
+    },
+    "b_arch": {
+      "name": "Bachelor of Architecture (B.Arch)",
+      "level": "Undergraduate",
+      "duration": "5 years",
+      "overview": "B.Arch is a 5-year undergraduate program in architecture that combines theoretical knowledge with practical studio work to develop architects.",
+      "eligibility": [
+        "Passed 10+2 with Mathematics",
+        "Minimum 50% in 12th standard",
+        "Valid JEE Main (Paper 2) score",
+        "NATA score (if required)"
+      ],
+      "entrance_exam": "JEE Main (Paper 2) + NATA",
+      "counseling": "JoSAA",
+      "counseling_website": "https://josaa.nic.in",
+      "seats": 20,
+      "fee_structure": {
+        "semester_fee": "₹10,000 - ₹16,000 per semester",
+        "total_semesters": 10,
+        "total_fee": "₹1,00,000 - ₹1,60,000",
+        "payment_schedule": "Each semester"
+      },
+      "documents_required": [
+        "10th mark sheet",
+        "12th mark sheet",
+        "JEE Main (Paper 2) admit card and result",
+        "NATA admit card and result (if applicable)",
+        "Category certificate (if applicable)",
+        "Domicile certificate",
+        "Passport-size photographs",
+        "Identity proof"
+      ],
+      "placement_info": {
+        "placement_rate": "75-80%",
+        "avg_package": "₹6-8 LPA",
+        "career_options": ["Architect", "Urban Planner", "Interior Designer", "CAD Specialist"]
+      }
+    }
+  },
+  "postgraduate": {
+    "m_tech": {
+      "name": "Master of Technology (M.Tech)",
+      "level": "Postgraduate",
+      "duration": "2 years",
+      "overview": "M.Tech is a 2-year postgraduate program that provides advanced knowledge in specialized engineering domains with research and industry exposure.",
+      "eligibility": [
+        "Bachelor's degree in relevant engineering/technology discipline",
+        "Minimum 60% marks in bachelor's degree (or as specified)",
+        "Valid GATE score",
+        "Valid graduation certificate required at time of admission"
+      ],
+      "entrance_exam": "GATE (Graduate Aptitude Test in Engineering)",
+      "counseling": "CCMT (Central Counselling for M.Tech)",
+      "counseling_website": "https://ccmt.admissions.nic.in",
+      "specializations": [
+        {
+          "name": "Computer Science & Engineering",
+          "code": "CSE",
+          "seats": 30,
+          "specialization_areas": ["AI/ML", "Cloud Computing", "Cybersecurity", "Data Science"]
+        },
+        {
+          "name": "Electronics & Communication",
+          "code": "ECE",
+          "seats": 20,
+          "specialization_areas": ["VLSI", "Wireless Communication", "Signal Processing"]
+        },
+        {
+          "name": "Electrical Engineering",
+          "code": "EE",
+          "seats": 20,
+          "specialization_areas": ["Power Systems", "Control Systems", "Renewable Energy"]
+        },
+        {
+          "name": "Mechanical Engineering",
+          "code": "ME",
+          "seats": 20,
+          "specialization_areas": ["Thermal Engineering", "CAD/CAM", "Industrial Engineering"]
+        },
+        {
+          "name": "Civil Engineering",
+          "code": "CE",
+          "seats": 20,
+          "specialization_areas": ["Structural Engineering", "Transportation", "Water Resources"]
+        },
+        {
+          "name": "Chemical Engineering",
+          "code": "CHE",
+          "seats": 15,
+          "specialization_areas": ["Process Engineering", "Environmental Engineering"]
+        }
+      ],
+      "fee_structure": {
+        "semester_fee": "₹8,000 - ₹12,000 per semester",
+        "total_semesters": 4,
+        "total_fee": "₹32,000 - ₹48,000",
+        "payment_schedule": [
+          "Semester 1: Due at admission (within 7 days of seat acceptance)",
+          "Semester 2: Due at start of 2nd semester (6 months after admission)",
+          "Semester 3: Due at start of 3rd semester (12 months after admission)",
+          "Semester 4: Due at start of 4th semester (18 months after admission)"
+        ]
+      },
+      "fee_payment_modes": [
+        "Online: Credit/Debit Card, Net Banking",
+        "Demand Draft in favor of VNIT Nagpur",
+        "Cash payment at VNIT office",
+        "NEFT/RTGS transfer"
+      ],
+      "fee_waiver_scholarship": {
+        "merit_scholarship": "Available for top performers - waives 25-50% fee",
+        "need_based_scholarship": "Available for economically weaker students",
+        "reserved_category_benefits": "Fee concessions as per government norms",
+        "application_process": "Apply through VNIT scholarship portal after admission"
+      },
+      "documents_required": [
+        "Bachelor's degree certificate",
+        "Bachelor's degree mark sheet",
+        "GATE admit card",
+        "GATE scorecard",
+        "Category certificate (if applicable)",
+        "Domicile certificate",
+        "Passport-size photographs",
+        "Identity proof",
+        "Address proof"
+      ],
+      "admission_process": [
+        "Appear for GATE examination",
+        "Get GATE score and rank",
+        "Register on CCMT portal",
+        "Fill choices for programs and colleges",
+        "Wait for seat allocation rounds",
+        "Accept allotted seat within deadline",
+        "Complete document verification",
+        "Pay semester fee",
+        "Report to VNIT for registration",
+        "Complete hostel/accommodation arrangements if needed"
+      ],
+      "placement_info": {
+        "placement_rate": "85-90%",
+        "avg_package": "₹12-15 LPA",
+        "highest_package": "₹25+ LPA",
+        "top_recruiters": [
+          "Google", "Microsoft", "Amazon", "Facebook",
+          "Goldman Sachs", "Morgan Stanley", "TCS", "Infosys"
+        ],
+        "career_opportunities": [
+          "Software Engineer", "Research Engineer", "Data Scientist",
+          "System Architect", "Technical Lead", "Researcher"
+        ]
+      }
+    },
+    "m_sc": {
+      "name": "Master of Science (M.Sc)",
+      "level": "Postgraduate",
+      "duration": "2 years",
+      "overview": "M.Sc is a 2-year postgraduate program in science with emphasis on research and advanced concepts in Physics, Chemistry, or Mathematics.",
+      "eligibility": [
+        "Bachelor's degree with relevant subjects (Physics, Chemistry, Mathematics)",
+        "Minimum 55% marks in bachelor's degree",
+        "Valid IIT JAM (Joint Admission Test for Masters) score"
+      ],
+      "entrance_exam": "IIT JAM (Joint Admission Test for Masters)",
+      "counseling": "CCMN (Centralized Counselling for M.Sc)",
+      "counseling_website": "https://ccmn.admissions.nic.in",
+      "specializations": [
+        {
+          "name": "Physics",
+          "code": "PHY",
+          "seats": 15,
+          "subject_areas": ["Condensed Matter Physics", "Quantum Mechanics", "Astrophysics"]
+        },
+        {
+          "name": "Chemistry",
+          "code": "CHE",
+          "seats": 15,
+          "subject_areas": ["Organic Chemistry", "Inorganic Chemistry", "Physical Chemistry"]
+        },
+        {
+          "name": "Mathematics",
+          "code": "MATH",
+          "seats": 15,
+          "subject_areas": ["Pure Mathematics", "Applied Mathematics", "Computational Mathematics"]
+        }
+      ],
+      "fee_structure": {
+        "semester_fee": "₹7,000 - ₹10,000 per semester",
+        "total_semesters": 4,
+        "total_fee": "₹28,000 - ₹40,000",
+        "payment_schedule": [
+          "Semester 1: Due at admission",
+          "Semester 2: Due at start of 2nd semester",
+          "Semester 3: Due at start of 3rd semester",
+          "Semester 4: Due at start of 4th semester"
+        ]
+      },
+      "fee_payment_modes": [
+        "Online: Credit/Debit Card, Net Banking",
+        "Demand Draft in favor of VNIT Nagpur",
+        "Cash payment at VNIT office",
+        "NEFT/RTGS transfer"
+      ],
+      "documents_required": [
+        "Bachelor's degree certificate",
+        "Bachelor's degree mark sheet",
+        "IIT JAM admit card",
+        "IIT JAM scorecard",
+        "Category certificate (if applicable)",
+        "Domicile certificate",
+        "Passport-size photographs",
+        "Identity proof"
+      ],
+      "admission_process": [
+        "Appear for IIT JAM examination",
+        "Receive IIT JAM score",
+        "Register on CCMN portal",
+        "Fill course and college preferences",
+        "Participate in seat allocation",
+        "Accept allotted seat",
+        "Complete document verification",
+        "Pay admission fee",
+        "Register at VNIT"
+      ],
+      "placement_info": {
+        "placement_rate": "70-75%",
+        "avg_package": "₹6-8 LPA",
+        "career_opportunities": [
+          "Research Scientist", "University Faculty", "Data Analyst",
+          "Science Educator", "Researcher in Industry Labs"
+        ]
+      }
+    }
+  },
+  "general_info": {
+    "admission_steps": [
+      "Check eligibility and appear for required entrance exam",
+      "Register for admission portal after exam results",
+      "Participate in central counseling (JoSAA/CCMT/CCMN)",
+      "Accept allotted seat within deadline",
+      "Upload all required documents",
+      "Pay admission fees",
+      "Report at institute for physical verification",
+      "Complete registration and attend orientation"
+    ],
+    "placements": {
+      "avg_package": "₹10-12 LPA",
+      "top_recruiter_package": "₹20+ LPA",
+      "placement_rate": "85-90%",
+      "recruiters": [
+        "GAIL", "ONGC", "TCS", "Infosys", "Cognizant",
+        "Google", "Amazon", "Microsoft", "Goldman Sachs",
+        "Flipkart", "Walmart", "PayPal", "Adobe"
       ]
     }
   }
