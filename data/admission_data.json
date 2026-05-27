@@ -15,18 +15,12 @@
       "counseling": "JoSAA (Joint Seat Allocation Authority)",
       "counseling_website": "https://josaa.nic.in",
       "fee_structure": {
-        "semester_fee": "₹9,000 per semester",
+        "semester_fee": "₹9,000 - ₹10,000 per semester",
         "total_semesters": 8,
-        "total_fee": "₹72,000",
+        "total_fee": "₹72,000 - ₹80,000",
         "payment_schedule": [
-          "Semester 1: ₹9,000 (at admission)",
-          "Semester 2: ₹9,000 (6 months later)",
-          "Semester 3: ₹9,000 (12 months later)",
-          "Semester 4: ₹9,000 (18 months later)",
-          "Semester 5: ₹9,000 (24 months later)",
-          "Semester 6: ₹9,000 (30 months later)",
-          "Semester 7: ₹9,000 (36 months later)",
-          "Semester 8: ₹9,000 (42 months later)"
+          "Semester 1: At admission",
+          "Semester 2-8: Every 6 months"
         ]
       },
       "specializations": [
@@ -152,7 +146,6 @@
       "entrance_exam": "JEE Main (Paper 2) + NATA",
       "counseling": "JoSAA",
       "counseling_website": "https://josaa.nic.in",
-      "seats": 20,
       "fee_structure": {
         "semester_fee": "₹12,000 per semester",
         "total_semesters": 10,
@@ -201,15 +194,26 @@
       "counseling": "CCMT (Central Counselling for M.Tech)",
       "counseling_website": "https://ccmt.admissions.nic.in",
       "fee_structure": {
-        "semester_fee": "₹9,000 per semester",
+        "semester_fee": "₹8,000 - ₹10,000 per semester",
         "total_semesters": 4,
-        "total_fee": "₹36,000",
+        "total_fee": "₹32,000 - ₹40,000",
         "payment_schedule": [
-          "Semester 1: ₹9,000 (within 7 days of seat acceptance)",
-          "Semester 2: ₹9,000 (6 months after admission)",
-          "Semester 3: ₹9,000 (12 months after admission)",
-          "Semester 4: ₹9,000 (18 months after admission)"
+          "Semester 1: Within 7 days of seat acceptance",
+          "Semester 2: 6 months after admission",
+          "Semester 3: 12 months after admission",
+          "Semester 4: 18 months after admission"
         ]
+      },
+      "payment_modes": [
+        "Online: Credit/Debit Card, Net Banking",
+        "Demand Draft in favor of VNIT Nagpur",
+        "Cash payment at VNIT office",
+        "NEFT/RTGS transfer"
+      ],
+      "scholarships": {
+        "merit_scholarship": "Available for top performers - waives 25-50% fee",
+        "need_based_scholarship": "Available for economically weaker students",
+        "reserved_category_benefits": "Fee concessions as per government norms"
       },
       "specializations": [
         {
@@ -242,7 +246,8 @@
           "placements": "80% placement, Avg: ₹10-13 LPA",
           "avg_package": "₹10-13 LPA",
           "highest_package": "₹20+ LPA",
-          "top_recruiters": ["BHEL", "NTPC", "Power Grid", "GAIL", "TCS"]
+          "top_recruiters": ["BHEL", "NTPC", "Power Grid", "GAIL", "TCS"],
+          "career_options": ["Power Systems Engineer", "Control Systems Engineer", "Research Engineer"]
         },
         {
           "name": "Mechanical Engineering",
@@ -252,7 +257,8 @@
           "placements": "78% placement, Avg: ₹9-12 LPA",
           "avg_package": "₹9-12 LPA",
           "highest_package": "₹18+ LPA",
-          "top_recruiters": ["Maruti Suzuki", "Bajaj", "Hero MotoCorp", "BHEL", "TCS"]
+          "top_recruiters": ["Maruti Suzuki", "Bajaj", "Hero MotoCorp", "BHEL", "TCS"],
+          "career_options": ["Design Engineer", "Thermal Engineer", "Manufacturing Engineer"]
         },
         {
           "name": "Civil Engineering",
@@ -262,7 +268,8 @@
           "placements": "75% placement, Avg: ₹8-11 LPA",
           "avg_package": "₹8-11 LPA",
           "highest_package": "₹16+ LPA",
-          "top_recruiters": ["L&T", "Gammon India", "Hindustan Construction", "TCS"]
+          "top_recruiters": ["L&T", "Gammon India", "Hindustan Construction", "TCS"],
+          "career_options": ["Structural Engineer", "Civil Design Engineer", "Project Manager"]
         },
         {
           "name": "Chemical Engineering",
@@ -272,7 +279,8 @@
           "placements": "80% placement, Avg: ₹10-13 LPA",
           "avg_package": "₹10-13 LPA",
           "highest_package": "₹19+ LPA",
-          "top_recruiters": ["Reliance", "IOCL", "BPCL", "Dow Chemicals", "TCS"]
+          "top_recruiters": ["Reliance", "IOCL", "BPCL", "Dow Chemicals", "TCS"],
+          "career_options": ["Process Engineer", "Environmental Engineer", "Plant Engineer"]
         }
       ],
       "documents_required": [
@@ -301,14 +309,14 @@
       "counseling": "CCMN (Centralized Counselling for M.Sc)",
       "counseling_website": "https://ccmn.admissions.nic.in",
       "fee_structure": {
-        "semester_fee": "₹8,000 per semester",
+        "semester_fee": "₹7,500 - ₹8,000 per semester",
         "total_semesters": 4,
-        "total_fee": "₹32,000",
+        "total_fee": "₹30,000 - ₹32,000",
         "payment_schedule": [
-          "Semester 1: ₹8,000 (at admission)",
-          "Semester 2: ₹8,000 (6 months after admission)",
-          "Semester 3: ₹8,000 (12 months after admission)",
-          "Semester 4: ₹8,000 (18 months after admission)"
+          "Semester 1: ₹7,500-₹8,000 (at admission)",
+          "Semester 2: ₹7,500-₹8,000 (6 months after admission)",
+          "Semester 3: ₹7,500-₹8,000 (12 months after admission)",
+          "Semester 4: ₹7,500-₹8,000 (18 months after admission)"
         ]
       },
       "specializations": [
