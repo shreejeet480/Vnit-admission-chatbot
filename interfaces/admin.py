@@ -298,7 +298,7 @@ class AdminDashboard:
                         self.view_user_stats(user_name)
                 
                 elif choice == '5':
-                    print(f"{Fore.YELLOW}Thank you for using Admin Dashboard! Goodbye 👋{Style.RESET_ALL}\n")
+                    print(f"{Fore.YELLOW}Thank you for using Admin Dashboard! 👋{Style.RESET_ALL}\n")
                     break
                 
                 else:
