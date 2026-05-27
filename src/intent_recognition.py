@@ -16,9 +16,10 @@ class IntentRecognizer:
                     r'information about.*course',
                     r'what.*specializations',
                     r'available.*branches',
-                    r'tell.*about.*(?:b\.tech|btech|m\.tech|mtech|m\.sc|msc)',
-                    r'(?:b\.tech|btech|m\.tech|mtech|m\.sc|msc).*(?:computer|cse|ece|electrical|mechanical|civil|chemical)',
-                    r'(?:computer science|electronics|electrical|mechanical|civil|chemical).*(?:b\.tech|btech|m\.tech|mtech)'
+                    r'tell.*about.*(?:b\.tech|btech|b tech|m\.tech|mtech|m tech|m\.sc|msc|m sc)',
+                    r'(?:b\.tech|btech|b tech|m\.tech|mtech|m tech|m\.sc|msc|m sc).*(?:computer|cse|ece|electrical|mechanical|civil|chemical|physics|phy|chemistry|che|mathematics|math)',
+                    r'(?:computer science|electronics|electrical|mechanical|civil|chemical|physics|chemistry|mathematics).*(?:b\.tech|btech|b tech|m\.tech|mtech|m tech|m\.sc|msc|m sc)',
+                    r'(?:computer|cse|electronics|ece|electrical|mechanical|civil|chemical|physics|chemistry|mathematics)',
                 ]
             },
             'eligibility': {
@@ -54,7 +55,8 @@ class IntentRecognizer:
                 'patterns': [
                     r'what.*documents',
                     r'required.*documents',
-                    r'documents.*needed'
+                    r'documents.*needed',
+                    r'document.*required'
                 ]
             },
             'fees': {
@@ -66,7 +68,8 @@ class IntentRecognizer:
                     r'tuition.*fee',
                     r'payment.*date',
                     r'last.*date',
-                    r'deadline.*fee'
+                    r'deadline.*fee',
+                    r'.*fee.*'
                 ]
             },
             'placement': {
@@ -96,12 +99,14 @@ class IntentRecognizer:
         # Program and specialization keywords
         self.programs = ['b.tech', 'btech', 'b tech', 'm.tech', 'mtech', 'm tech', 'm.sc', 'msc', 'm sc', 'b.arch', 'barch', 'mba', 'phd']
         self.specializations = {
-            'cse': ['computer', 'cse', 'cs', 'software'],
-            'ece': ['electronics', 'ece', 'communication'],
-            'ee': ['electrical', 'ee', 'power'],
-            'me': ['mechanical', 'me', 'thermal'],
-            'ce': ['civil', 'ce', 'structural'],
-            'che': ['chemical', 'che', 'chemistry']
+            'cse': ['computer', 'cse', 'cs', 'software', 'computing'],
+            'ece': ['electronics', 'ece', 'communication', 'vlsi'],
+            'ee': ['electrical', 'ee', 'power', 'electrical engineering'],
+            'me': ['mechanical', 'me', 'thermal', 'mechanical engineering'],
+            'ce': ['civil', 'ce', 'structural', 'civil engineering'],
+            'che': ['chemical', 'che', 'chemistry', 'chemical engineering'],
+            'phy': ['physics', 'phy', 'phd physics'],
+            'math': ['mathematics', 'math', 'maths', 'computational mathematics']
         }
 
     def recognize(self, message: str) -> Dict:
@@ -123,8 +128,15 @@ class IntentRecognizer:
         program = self._extract_program(message_lower)
         specialization = self._extract_specialization(message_lower)
 
+        # Boost confidence if specialization is found
+        if specialization:
+            intent_scores['program_info'] = 0.9
+
         # Check pattern matches
         for intent_name, intent_data in self.intents.items():
+            if intent_name in intent_scores:
+                continue  # Skip if already set
+                
             score = 0
 
             # Check patterns (higher weight)
@@ -175,9 +187,11 @@ class IntentRecognizer:
         return None
     
     def _extract_specialization(self, message: str) -> str:
-        """Extract specialization from message"""
+        """Extract specialization from message - improved matching"""
+        # First try exact matches with program names
         for spec_code, keywords in self.specializations.items():
             for keyword in keywords:
-                if keyword in message:
+                # Check for exact or near-exact matches
+                if re.search(rf'\b{keyword}\b', message, re.IGNORECASE):
                     return spec_code
         return None
