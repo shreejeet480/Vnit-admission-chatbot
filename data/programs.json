@@ -1,0 +1,89 @@
+{
+  "programs": {
+    "B.Tech": {
+      "level": "Undergraduate",
+      "duration": "4 years",
+      "specializations": [
+        {
+          "name": "Computer Science & Engineering",
+          "code": "CSE",
+          "seats": 120,
+          "cutoff_rank_open": 6000
+        },
+        {
+          "name": "Electronics & Communication Engineering",
+          "code": "ECE",
+          "seats": 60,
+          "cutoff_rank_open": 7500
+        },
+        {
+          "name": "Electrical Engineering",
+          "code": "EE",
+          "seats": 60,
+          "cutoff_rank_open": 8000
+        },
+        {
+          "name": "Mechanical Engineering",
+          "code": "ME",
+          "seats": 60,
+          "cutoff_rank_open": 8500
+        },
+        {
+          "name": "Civil Engineering",
+          "code": "CE",
+          "seats": 60,
+          "cutoff_rank_open": 9000
+        },
+        {
+          "name": "Chemical Engineering",
+          "code": "CHE",
+          "seats": 60,
+          "cutoff_rank_open": 9500
+        }
+      ]
+    },
+    "B.Arch": {
+      "level": "Undergraduate",
+      "duration": "5 years",
+      "entrance_exam": "JEE Main (Paper 2) + NATA",
+      "seats": 20
+    },
+    "M.Tech": {
+      "level": "Postgraduate",
+      "duration": "2 years",
+      "entrance_exam": "GATE",
+      "specializations": [
+        "Computer Science & Engineering",
+        "Electronics & Communication Engineering",
+        "Electrical Engineering",
+        "Mechanical Engineering",
+        "Civil Engineering",
+        "Chemical Engineering"
+      ]
+    },
+    "M.Sc": {
+      "level": "Postgraduate",
+      "duration": "2 years",
+      "entrance_exam": "IIT JAM",
+      "specializations": [
+        "Physics",
+        "Chemistry",
+        "Mathematics"
+      ]
+    },
+    "MBA": {
+      "level": "Postgraduate",
+      "duration": "2 years",
+      "entrance_exam": "Institute-level Written Test + GD + PI",
+      "seats": 60
+    },
+    "Ph.D": {
+      "level": "Doctorate",
+      "specializations": [
+        "Engineering",
+        "Science"
+      ],
+      "admission_process": "Written Test + Personal Interview"
+    }
+  }
+}

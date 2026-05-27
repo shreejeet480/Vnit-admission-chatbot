@@ -1,0 +1,100 @@
+{
+  "faqs": [
+    {
+      "id": 1,
+      "category": "General",
+      "question": "What is VNIT Nagpur?",
+      "answer": "VNIT (Visvesvaraya National Institute of Technology) Nagpur is a premier National Institute of Technology in India, established in 1965. It offers undergraduate and postgraduate programs in engineering, architecture, and science."
+    },
+    {
+      "id": 2,
+      "category": "B.Tech Admission",
+      "question": "What are the eligibility criteria for B.Tech admission?",
+      "answer": "You must have passed 10+2 with Physics, Chemistry, and Mathematics, with a minimum of 75% marks (65% for SC/ST). You should also be in the top 20 percentile of your board exams and have a valid JEE Main score."
+    },
+    {
+      "id": 3,
+      "category": "B.Tech Admission",
+      "question": "How is B.Tech admission conducted?",
+      "answer": "B.Tech admission is conducted through JEE Main entrance exam, followed by counseling through JoSAA (Joint Seat Allocation Authority). Seats are allocated based on your JEE Main rank and choices."
+    },
+    {
+      "id": 4,
+      "category": "B.Tech Admission",
+      "question": "What is the approximate JEE Main rank required for VNIT B.Tech?",
+      "answer": "The cutoff rank varies yearly and by category. Typically, Open category requires rank within top 6,000-8,000, OBC within 15,000-18,000, SC within 20,000-25,000, and ST within 25,000-30,000."
+    },
+    {
+      "id": 5,
+      "category": "B.Arch Admission",
+      "question": "How is B.Arch admission conducted at VNIT?",
+      "answer": "B.Arch admission requires JEE Main (Paper 2) and NATA scores. Admission is through JoSAA counseling. The program is for 5 years."
+    },
+    {
+      "id": 6,
+      "category": "M.Tech Admission",
+      "question": "What are the eligibility criteria for M.Tech?",
+      "answer": "You must have a Bachelor's degree in a relevant engineering or technology discipline with a minimum of 60% marks and a valid GATE score."
+    },
+    {
+      "id": 7,
+      "category": "M.Tech Admission",
+      "question": "How is M.Tech admission conducted?",
+      "answer": "M.Tech admission is through GATE exam followed by CCMT (Central Counselling for M.Tech) counseling. Seats are allocated based on your GATE score and choices."
+    },
+    {
+      "id": 8,
+      "category": "M.Sc Admission",
+      "question": "What are the eligibility criteria for M.Sc?",
+      "answer": "You must have a Bachelor's degree with relevant subjects and a minimum of 55% marks. A valid IIT JAM score is required."
+    },
+    {
+      "id": 9,
+      "category": "MBA Admission",
+      "question": "What are the eligibility criteria for MBA?",
+      "answer": "Any Bachelor's degree holder can apply. Work experience is not mandatory. Selection is based on institute-level written test, group discussion, and personal interview."
+    },
+    {
+      "id": 10,
+      "category": "Ph.D Admission",
+      "question": "What are the eligibility criteria for Ph.D?",
+      "answer": "You must have a Master's degree in a relevant field with high academic standing. Sometimes GATE/NET/CSIR/UGC scores are considered."
+    },
+    {
+      "id": 11,
+      "category": "Documents",
+      "question": "What documents are required for admission?",
+      "answer": "Generally required: 10th mark sheet, 12th mark sheet, entrance exam admit card and result, category certificate (if applicable), domicile certificate, passport-size photos (4x6 cm), and identity proof."
+    },
+    {
+      "id": 12,
+      "category": "Fees",
+      "question": "What is the fee structure at VNIT?",
+      "answer": "B.Tech: ₹9,000-15,000 per semester; M.Tech: ₹8,000-12,000 per semester; MBA: ₹50,000-75,000 per semester. Fees are approximate and subject to change."
+    },
+    {
+      "id": 13,
+      "category": "Placements",
+      "question": "What is the placement scenario at VNIT?",
+      "answer": "VNIT has a strong placement record with 85-90% placement rate. Average package is ₹10-12 LPA. Top companies like Google, Amazon, Microsoft, TCS, Infosys recruit from VNIT."
+    },
+    {
+      "id": 14,
+      "category": "General",
+      "question": "Can I change my specialization after admission?",
+      "answer": "Generally, specialization changes are not allowed after admission. Choose your specialization carefully during counseling based on your interests."
+    },
+    {
+      "id": 15,
+      "category": "General",
+      "question": "Does VNIT offer scholarships?",
+      "answer": "Yes, VNIT offers scholarships to merit and need-based students. Check the official website for scholarship schemes and eligibility criteria."
+    },
+    {
+      "id": 16,
+      "category": "General",
+      "question": "How can I get more information about VNIT?",
+      "answer": "Visit the official VNIT website: https://vnit.ac.in. For admission-specific queries, visit: https://vnit.ac.in/section/academics/admission/"
+    }
+  ]
+}

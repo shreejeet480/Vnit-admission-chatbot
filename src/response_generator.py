@@ -27,23 +27,24 @@ class ResponseGenerator:
         return {}
 
     def generate(self, user_message: str, intent: str,
-                confidence: float = 0, conversation_history: List = None) -> Dict:
+                confidence: float = 0, program: str = None, 
+                specialization: str = None, conversation_history: List = None) -> Dict:
         """Generate response based on intent"""
         response_text = ""
         suggestions = []
 
         if intent == 'program_info':
-            response_text, suggestions = self._handle_program_info(user_message)
+            response_text, suggestions = self._handle_program_info(user_message, program, specialization)
         elif intent == 'eligibility':
-            response_text, suggestions = self._handle_eligibility(user_message)
+            response_text, suggestions = self._handle_eligibility(user_message, program)
         elif intent == 'admission_process':
             response_text, suggestions = self._handle_admission_process()
         elif intent == 'entrance_exam':
             response_text, suggestions = self._handle_entrance_exam(user_message)
         elif intent == 'documents':
-            response_text, suggestions = self._handle_documents(user_message)
+            response_text, suggestions = self._handle_documents(user_message, program)
         elif intent == 'fees':
-            response_text, suggestions = self._handle_fees(user_message)
+            response_text, suggestions = self._handle_fees(user_message, program, specialization)
         elif intent == 'placement':
             response_text, suggestions = self._handle_placement()
         elif intent == 'counseling':
@@ -56,7 +57,7 @@ class ResponseGenerator:
             'suggestions': suggestions
         }
 
-    def _handle_program_info(self, message: str) -> tuple:
+    def _handle_program_info(self, message: str, program: str = None, specialization: str = None) -> tuple:
         """Handle program information queries with complete details"""
         response = ""
         suggestions = []
@@ -64,8 +65,31 @@ class ResponseGenerator:
         message_lower = message.lower()
         
         # B.Tech Query
-        if 'b.tech' in message_lower or 'btech' in message_lower:
+        if program == 'b_tech' or 'b.tech' in message_lower or 'btech' in message_lower:
             b_tech = self.admission_data.get('undergraduate', {}).get('b_tech', {})
+            
+            # If specific specialization is mentioned
+            if specialization:
+                spec_details = self._get_specialization_details(b_tech, specialization)
+                if spec_details:
+                    response = f"📚 **B.Tech - {spec_details.get('name', 'Specialization')}**\n\n"
+                    response += f"**Specialization Code**: {spec_details.get('code', '')}\n"
+                    response += f"**Total Seats**: {spec_details.get('seats', '')}\n"
+                    response += f"**Cutoff Rank (Open)**: {spec_details.get('cutoff_rank_open', '')}\n"
+                    response += f"**Placement Rate**: {spec_details.get('placements', '')}\n\n"
+                    response += "**Program Overview**:\n"
+                    response += f"{b_tech.get('overview', '')}\n\n"
+                    response += "**Duration**: 4 years\n"
+                    response += "**Entrance Exam**: JEE Main\n"
+                    response += "**Counseling**: JoSAA\n\n"
+                    response += "**Fee Structure**:\n"
+                    fee = b_tech.get('fee_structure', {})
+                    response += f"• Semester Fee: {fee.get('semester_fee', '')}\n"
+                    response += f"• Total Fee: {fee.get('total_fee', '')}\n"
+                    suggestions = [f"B.Tech {spec_details.get('name', '')} admission", "B.Tech eligibility", "Placement details"]
+                    return response, suggestions
+            
+            # Full B.Tech details if no specialization specified
             response = f"📚 **{b_tech.get('name', 'B.Tech')}**\n\n"
             response += f"**Overview**: {b_tech.get('overview', '')}\n\n"
             
@@ -104,11 +128,38 @@ class ResponseGenerator:
             response += f"• Average Package: {place.get('avg_package', '')}\n"
             response += f"• Highest Package: {place.get('highest_package', '')}\n"
             
-            suggestions = ["B.Tech eligibility", "B.Tech admission process", "B.Tech placements"]
+            suggestions = ["B.Tech Computer Science", "B.Tech Electronics", "B.Tech Mechanical"]
         
         # M.Tech Query
-        elif 'mtech' in message_lower or 'm.tech' in message_lower:
+        elif program == 'm_tech' or 'mtech' in message_lower or 'm.tech' in message_lower:
             m_tech = self.admission_data.get('postgraduate', {}).get('m_tech', {})
+            
+            # If specific specialization is mentioned
+            if specialization:
+                spec_details = self._get_specialization_details(m_tech, specialization)
+                if spec_details:
+                    response = f"📚 **M.Tech - {spec_details.get('name', 'Specialization')}**\n\n"
+                    response += f"**Specialization Code**: {spec_details.get('code', '')}\n"
+                    response += f"**Total Seats**: {spec_details.get('seats', '')}\n\n"
+                    response += "**Specialization Areas:**\n"
+                    areas = ', '.join(spec_details.get('specialization_areas', []))
+                    response += f"• {areas}\n\n"
+                    response += "**Program Overview**:\n"
+                    response += f"{m_tech.get('overview', '')}\n\n"
+                    response += "**Duration**: 2 years\n"
+                    response += "**Entrance Exam**: GATE\n"
+                    response += "**Counseling**: CCMT\n\n"
+                    response += "**Fee Structure:**\n"
+                    fee = m_tech.get('fee_structure', {})
+                    response += f"• Semester Fee: {fee.get('semester_fee', '')}\n"
+                    response += f"• Total Fee: {fee.get('total_fee', '')}\n"
+                    response += f"• Payment Schedule:\n"
+                    for schedule in fee.get('payment_schedule', []):
+                        response += f"  • {schedule}\n"
+                    suggestions = [f"M.Tech {spec_details.get('name', '')} eligibility", "M.Tech fee details", "Placement info"]
+                    return response, suggestions
+            
+            # Full M.Tech details if no specialization specified
             response = f"📚 **{m_tech.get('name', 'M.Tech')}**\n\n"
             response += f"**Overview**: {m_tech.get('overview', '')}\n\n"
             
@@ -155,11 +206,34 @@ class ResponseGenerator:
             response += f"• Average Package: {place.get('avg_package', '')}\n"
             response += f"• Highest Package: {place.get('highest_package', '')}\n"
             
-            suggestions = ["M.Tech eligibility", "M.Tech fee details", "M.Tech placements"]
+            suggestions = ["M.Tech Computer Science", "M.Tech Electronics", "M.Tech Mechanical"]
         
         # M.Sc Query
-        elif 'msc' in message_lower or 'm.sc' in message_lower:
+        elif program == 'm_sc' or 'msc' in message_lower or 'm.sc' in message_lower:
             m_sc = self.admission_data.get('postgraduate', {}).get('m_sc', {})
+            
+            # If specific specialization is mentioned
+            if specialization:
+                spec_details = self._get_specialization_details(m_sc, specialization)
+                if spec_details:
+                    response = f"📚 **M.Sc - {spec_details.get('name', 'Specialization')}**\n\n"
+                    response += f"**Specialization Code**: {spec_details.get('code', '')}\n"
+                    response += f"**Total Seats**: {spec_details.get('seats', '')}\n\n"
+                    response += "**Subject Areas:**\n"
+                    areas = ', '.join(spec_details.get('subject_areas', []))
+                    response += f"• {areas}\n\n"
+                    response += "**Program Overview**:\n"
+                    response += f"{m_sc.get('overview', '')}\n\n"
+                    response += "**Duration**: 2 years\n"
+                    response += "**Entrance Exam**: IIT JAM\n\n"
+                    response += "**Fee Structure:**\n"
+                    fee = m_sc.get('fee_structure', {})
+                    response += f"• Semester Fee: {fee.get('semester_fee', '')}\n"
+                    response += f"• Total Fee: {fee.get('total_fee', '')}\n"
+                    suggestions = [f"M.Sc {spec_details.get('name', '')} eligibility", "M.Sc admission", "Placement info"]
+                    return response, suggestions
+            
+            # Full M.Sc details if no specialization specified
             response = f"📚 **{m_sc.get('name', 'M.Sc')}**\n\n"
             response += f"**Overview**: {m_sc.get('overview', '')}\n\n"
             
@@ -190,17 +264,12 @@ class ResponseGenerator:
             for schedule in fee.get('payment_schedule', []):
                 response += f"• {schedule}\n"
             
-            response += f"\n**Payment Modes:**\n"
-            for mode in m_sc.get('fee_payment_modes', []):
-                response += f"• {mode}\n"
-            
             response += f"\n**Placement Information:**\n"
             place = m_sc.get('placement_info', {})
             response += f"• Placement Rate: {place.get('placement_rate', '')}\n"
             response += f"• Average Package: {place.get('avg_package', '')}\n"
-            response += f"• Career Options: {', '.join(place.get('career_opportunities', []))}\n"
             
-            suggestions = ["M.Sc eligibility", "M.Sc fee details", "M.Sc admission"]
+            suggestions = ["M.Sc Physics", "M.Sc Chemistry", "M.Sc Mathematics"]
         
         else:
             response = "📚 **Programs offered at VNIT Nagpur:**\n\n"
@@ -212,32 +281,41 @@ class ResponseGenerator:
             response += "• M.Sc (2 years) - Physics, Chemistry, Mathematics\n"
             response += "• MBA (2 years)\n"
             response += "• Ph.D - Research programs\n\n"
-            response += "Ask me about any specific program for complete information!"
-            suggestions = ["Tell me about B.Tech", "Tell me about M.Tech", "Tell me about M.Sc"]
+            response += "Ask me about any specific program or specialization for complete information!"
+            suggestions = ["B.Tech Computer Science", "M.Tech Computer Science", "M.Sc Physics"]
         
         return response, suggestions
 
-    def _handle_eligibility(self, message: str) -> tuple:
+    def _get_specialization_details(self, program: dict, specialization: str) -> Dict:
+        """Get details of a specific specialization"""
+        specs = program.get('specializations', [])
+        for spec in specs:
+            if specialization.lower() in spec.get('code', '').lower() or \
+               specialization.lower() in spec.get('name', '').lower():
+                return spec
+        return None
+
+    def _handle_eligibility(self, message: str, program: str = None) -> tuple:
         """Handle eligibility queries"""
         response = "✅ **VNIT Eligibility Information**\n\n"
         
         message_lower = message.lower()
         
-        if 'b.tech' in message_lower or 'btech' in message_lower:
+        if program == 'b_tech' or 'b.tech' in message_lower or 'btech' in message_lower:
             b_tech = self.admission_data.get('undergraduate', {}).get('b_tech', {})
             response = "✅ **B.Tech Eligibility Criteria:**\n\n"
             for eli in b_tech.get('eligibility', []):
                 response += f"• {eli}\n"
             suggestions = ["B.Tech admission process", "B.Tech cutoff", "B.Tech fee"]
         
-        elif 'mtech' in message_lower or 'm.tech' in message_lower:
+        elif program == 'm_tech' or 'mtech' in message_lower or 'm.tech' in message_lower:
             m_tech = self.admission_data.get('postgraduate', {}).get('m_tech', {})
             response = "✅ **M.Tech Eligibility Criteria:**\n\n"
             for eli in m_tech.get('eligibility', []):
                 response += f"• {eli}\n"
             suggestions = ["M.Tech admission", "M.Tech specializations", "M.Tech fee"]
         
-        elif 'msc' in message_lower or 'm.sc' in message_lower:
+        elif program == 'm_sc' or 'msc' in message_lower or 'm.sc' in message_lower:
             m_sc = self.admission_data.get('postgraduate', {}).get('m_sc', {})
             response = "✅ **M.Sc Eligibility Criteria:**\n\n"
             for eli in m_sc.get('eligibility', []):
@@ -281,19 +359,19 @@ class ResponseGenerator:
         suggestions = ["JEE Main details", "GATE exam", "IIT JAM details"]
         return response, suggestions
 
-    def _handle_documents(self, message: str) -> tuple:
+    def _handle_documents(self, message: str, program: str = None) -> tuple:
         """Handle documents queries"""
         response = "📄 **Documents Required for Admission:**\n\n"
         
         message_lower = message.lower()
         
-        if 'b.tech' in message_lower or 'btech' in message_lower:
+        if program == 'b_tech' or 'b.tech' in message_lower or 'btech' in message_lower:
             docs = self.admission_data.get('undergraduate', {}).get('b_tech', {}).get('documents_required', [])
             response = "📄 **B.Tech Documents Required:**\n\n"
-        elif 'mtech' in message_lower or 'm.tech' in message_lower:
+        elif program == 'm_tech' or 'mtech' in message_lower or 'm.tech' in message_lower:
             docs = self.admission_data.get('postgraduate', {}).get('m_tech', {}).get('documents_required', [])
             response = "📄 **M.Tech Documents Required:**\n\n"
-        elif 'msc' in message_lower or 'm.sc' in message_lower:
+        elif program == 'm_sc' or 'msc' in message_lower or 'm.sc' in message_lower:
             docs = self.admission_data.get('postgraduate', {}).get('m_sc', {}).get('documents_required', [])
             response = "📄 **M.Sc Documents Required:**\n\n"
         else:
@@ -306,13 +384,13 @@ class ResponseGenerator:
         suggestions = ["B.Tech documents", "M.Tech documents", "Document verification"]
         return response, suggestions
 
-    def _handle_fees(self, message: str) -> tuple:
-        """Handle fees queries"""
+    def _handle_fees(self, message: str, program: str = None, specialization: str = None) -> tuple:
+        """Handle fees queries with specialization context"""
         response = "💰 **Fee Structure at VNIT Nagpur:**\n\n"
         
         message_lower = message.lower()
         
-        if 'b.tech' in message_lower or 'btech' in message_lower:
+        if program == 'b_tech' or 'b.tech' in message_lower or 'btech' in message_lower:
             b_tech = self.admission_data.get('undergraduate', {}).get('b_tech', {})
             fee = b_tech.get('fee_structure', {})
             response = "💰 **B.Tech Fee Structure:**\n\n"
@@ -322,14 +400,14 @@ class ResponseGenerator:
             response += f"• Scholarships: {fee.get('scholarships', '')}\n"
             suggestions = ["B.Tech payment", "Scholarships", "Fee waiver"]
         
-        elif 'mtech' in message_lower or 'm.tech' in message_lower:
+        elif program == 'm_tech' or 'mtech' in message_lower or 'm.tech' in message_lower:
             m_tech = self.admission_data.get('postgraduate', {}).get('m_tech', {})
             fee = m_tech.get('fee_structure', {})
-            response = "💰 **M.Tech Fee Structure:**\n\n"
+            response = "💰 **M.Tech Fee Structure & Payment Details:**\n\n"
             response += f"• Semester Fee: {fee.get('semester_fee', '')}\n"
             response += f"• Total Semesters: {fee.get('total_semesters', '')}\n"
             response += f"• Total Fee: {fee.get('total_fee', '')}\n\n"
-            response += "**Payment Schedule:**\n"
+            response += "**Payment Schedule (Important Dates):**\n"
             for schedule in fee.get('payment_schedule', []):
                 response += f"• {schedule}\n"
             response += "\n**Payment Modes:**\n"
@@ -339,9 +417,10 @@ class ResponseGenerator:
             scholar = m_tech.get('fee_waiver_scholarship', {})
             response += f"• Merit: {scholar.get('merit_scholarship', '')}\n"
             response += f"• Need-Based: {scholar.get('need_based_scholarship', '')}\n"
+            response += f"• Reserved Category: {scholar.get('reserved_category_benefits', '')}\n"
             suggestions = ["M.Tech payment dates", "Scholarships", "Fee waiver"]
         
-        elif 'msc' in message_lower or 'm.sc' in message_lower:
+        elif program == 'm_sc' or 'msc' in message_lower or 'm.sc' in message_lower:
             m_sc = self.admission_data.get('postgraduate', {}).get('m_sc', {})
             fee = m_sc.get('fee_structure', {})
             response = "💰 **M.Sc Fee Structure:**\n\n"

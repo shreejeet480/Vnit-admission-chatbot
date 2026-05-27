@@ -22,7 +22,7 @@ class CLIInterface:
             if name and len(name) >= 2:
                 self.user_name = name
                 self.user_id = f"cli_user_{name.lower().replace(' ', '_')}"
-                self.chatbot.set_user_id(self.user_id)
+                self.chatbot.set_user(self.user_id, name)
                 return name
             else:
                 print(f"{Fore.YELLOW}⚠️  Please enter a valid name (at least 2 characters){Style.RESET_ALL}\n")
@@ -43,14 +43,26 @@ class CLIInterface:
         print(f"\n{Fore.YELLOW}❓ Common Questions:{Style.RESET_ALL}")
         print("• What programs does VNIT offer?")
         print("• Tell me about B.Tech")
-        print("• Tell me about M.Tech")
-        print("• Tell me about M.Sc")
+        print("• Tell me about M.Tech Computer Science")
+        print("• Tell me about M.Sc Physics")
         print("• What is the eligibility for B.Tech?")
+        print("• M.Tech fee payment dates")
         print("• How is the admission process?")
         print("• What about placement statistics?")
-        print("• What is the fee structure?")
         print("• How does JoSAA counseling work?")
         print("")
+
+    def display_stats(self):
+        """Display user conversation statistics"""
+        stats = self.chatbot.get_user_stats()
+        if stats:
+            print(f"\n{Fore.CYAN}📊 Your Conversation Statistics:{Style.RESET_ALL}")
+            print(f"• Total Questions Asked: {stats.get('total_conversations', 0)}")
+            if stats.get('most_asked_intent'):
+                print(f"• Most Asked About: {stats.get('most_asked_intent', 'N/A')}")
+            if stats.get('most_asked_program'):
+                print(f"• Most Interested Program: {stats.get('most_asked_program', 'N/A')}")
+            print()
 
     def run(self):
         """Run the CLI chatbot in an interactive loop"""
@@ -70,8 +82,14 @@ class CLIInterface:
 
                 # Handle exit command
                 if user_input.lower() == 'exit':
-                    print(f"\n{Fore.YELLOW}Thank you for using VNIT Admission Chatbot! See You Around 👋{Style.RESET_ALL}\n")
+                    self.display_stats()
+                    print(f"{Fore.YELLOW}Thank you for using VNIT Admission Chatbot! See You Around 👋{Style.RESET_ALL}\n")
                     break
+
+                # Handle stats command
+                if user_input.lower() == 'stats':
+                    self.display_stats()
+                    continue
 
                 # Display help
                 if user_input.lower() == 'help':
@@ -95,6 +113,7 @@ class CLIInterface:
                     print(f"{Fore.RED}❌ Error: {result['response']}{Style.RESET_ALL}\n")
 
             except KeyboardInterrupt:
+                self.display_stats()
                 print(f"\n{Fore.YELLOW}Thank you for using VNIT Admission Chatbot! See You Around 👋{Style.RESET_ALL}\n")
                 break
             except Exception as e:
