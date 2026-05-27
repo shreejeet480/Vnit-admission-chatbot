@@ -14,63 +14,107 @@
       "entrance_exam": "JEE Main",
       "counseling": "JoSAA (Joint Seat Allocation Authority)",
       "counseling_website": "https://josaa.nic.in",
+      "fee_structure": {
+        "semester_fee": "₹9,000 per semester",
+        "total_semesters": 8,
+        "total_fee": "₹72,000",
+        "payment_schedule": [
+          "Semester 1: ₹9,000 (at admission)",
+          "Semester 2: ₹9,000 (6 months later)",
+          "Semester 3: ₹9,000 (12 months later)",
+          "Semester 4: ₹9,000 (18 months later)",
+          "Semester 5: ₹9,000 (24 months later)",
+          "Semester 6: ₹9,000 (30 months later)",
+          "Semester 7: ₹9,000 (36 months later)",
+          "Semester 8: ₹9,000 (42 months later)"
+        ]
+      },
       "specializations": [
         {
           "name": "Computer Science & Engineering",
-          "code": "CSE",
+          "code": "cse",
           "seats": 120,
           "cutoff_rank_open": 6000,
-          "placements": "100% placement, Avg: ₹12-15 LPA"
+          "cutoff_rank_obc": 15000,
+          "cutoff_rank_sc": 20000,
+          "cutoff_rank_st": 25000,
+          "placements": "100% placement, Avg: ₹12-15 LPA",
+          "avg_package": "₹12-15 LPA",
+          "highest_package": "₹25+ LPA",
+          "top_recruiters": ["Google", "Amazon", "Microsoft", "Adobe", "Goldman Sachs", "TCS", "Infosys"],
+          "career_options": ["Software Engineer", "Data Scientist", "Cloud Architect", "ML Engineer", "DevOps Engineer"]
         },
         {
           "name": "Electronics & Communication Engineering",
-          "code": "ECE",
+          "code": "ece",
           "seats": 60,
           "cutoff_rank_open": 7500,
-          "placements": "95% placement, Avg: ₹10-12 LPA"
+          "cutoff_rank_obc": 16000,
+          "cutoff_rank_sc": 22000,
+          "cutoff_rank_st": 27000,
+          "placements": "95% placement, Avg: ₹10-12 LPA",
+          "avg_package": "₹10-12 LPA",
+          "highest_package": "₹22+ LPA",
+          "top_recruiters": ["Nokia", "Qualcomm", "Broadcom", "Samsung", "TCS", "Infosys", "Cognizant"],
+          "career_options": ["VLSI Design Engineer", "Embedded Systems Engineer", "Telecom Engineer", "RF Engineer"]
         },
         {
           "name": "Electrical Engineering",
-          "code": "EE",
+          "code": "ee",
           "seats": 60,
           "cutoff_rank_open": 8000,
-          "placements": "90% placement, Avg: ₹9-11 LPA"
+          "cutoff_rank_obc": 17000,
+          "cutoff_rank_sc": 23000,
+          "cutoff_rank_st": 28000,
+          "placements": "90% placement, Avg: ₹9-11 LPA",
+          "avg_package": "₹9-11 LPA",
+          "highest_package": "₹20+ LPA",
+          "top_recruiters": ["BHEL", "NTPC", "Power Grid", "GAIL", "TCS", "Siemens"],
+          "career_options": ["Power Systems Engineer", "Electrical Design Engineer", "Control Systems Engineer"]
         },
         {
           "name": "Mechanical Engineering",
-          "code": "ME",
+          "code": "me",
           "seats": 60,
           "cutoff_rank_open": 8500,
-          "placements": "85% placement, Avg: ₹8-10 LPA"
+          "cutoff_rank_obc": 18000,
+          "cutoff_rank_sc": 24000,
+          "cutoff_rank_st": 29000,
+          "placements": "85% placement, Avg: ₹8-10 LPA",
+          "avg_package": "₹8-10 LPA",
+          "highest_package": "₹18+ LPA",
+          "top_recruiters": ["Maruti Suzuki", "Bajaj", "Hero MotoCorp", "BHEL", "TCS", "Infosys"],
+          "career_options": ["Thermal Engineer", "Design Engineer", "Manufacturing Engineer", "CAD Specialist"]
         },
         {
           "name": "Civil Engineering",
-          "code": "CE",
+          "code": "ce",
           "seats": 60,
           "cutoff_rank_open": 9000,
-          "placements": "80% placement, Avg: ₹7-9 LPA"
+          "cutoff_rank_obc": 19000,
+          "cutoff_rank_sc": 25000,
+          "cutoff_rank_st": 30000,
+          "placements": "80% placement, Avg: ₹7-9 LPA",
+          "avg_package": "₹7-9 LPA",
+          "highest_package": "₹16+ LPA",
+          "top_recruiters": ["L&T", "Gammon India", "Hindustan Construction", "TCS", "Infosys"],
+          "career_options": ["Structural Engineer", "Civil Design Engineer", "Project Manager", "Site Engineer"]
         },
         {
           "name": "Chemical Engineering",
-          "code": "CHE",
+          "code": "che",
           "seats": 60,
           "cutoff_rank_open": 9500,
-          "placements": "85% placement, Avg: ₹8-10 LPA"
+          "cutoff_rank_obc": 20000,
+          "cutoff_rank_sc": 26000,
+          "cutoff_rank_st": 31000,
+          "placements": "85% placement, Avg: ₹8-10 LPA",
+          "avg_package": "₹8-10 LPA",
+          "highest_package": "₹17+ LPA",
+          "top_recruiters": ["Reliance", "IOCL", "BPCL", "Dow Chemicals", "TCS", "Infosys"],
+          "career_options": ["Process Engineer", "Plant Engineer", "Chemical Design Engineer", "Environmental Engineer"]
         }
       ],
-      "cutoff_category": {
-        "open": "Top 6000-8000",
-        "obc": "Top 15000-18000",
-        "sc": "Top 20000-25000",
-        "st": "Top 25000-30000"
-      },
-      "fee_structure": {
-        "semester_fee": "₹9,000 - ₹15,000 per semester",
-        "total_semesters": 8,
-        "total_fee": "₹72,000 - ₹1,20,000",
-        "payment_schedule": "Each semester",
-        "scholarships": "Merit-based and need-based available"
-      },
       "documents_required": [
         "10th mark sheet",
         "12th mark sheet",
@@ -92,16 +136,7 @@
         "Pay admission fee",
         "Report for physical verification",
         "Complete registration"
-      ],
-      "placement_info": {
-        "placement_rate": "85-90%",
-        "avg_package": "₹10-12 LPA",
-        "highest_package": "₹20+ LPA",
-        "top_recruiters": [
-          "Google", "Amazon", "Microsoft", "TCS", "Infosys",
-          "Cognizant", "Goldman Sachs", "Flipkart", "Walmart"
-        ]
-      }
+      ]
     },
     "b_arch": {
       "name": "Bachelor of Architecture (B.Arch)",
@@ -119,11 +154,25 @@
       "counseling_website": "https://josaa.nic.in",
       "seats": 20,
       "fee_structure": {
-        "semester_fee": "₹10,000 - ₹16,000 per semester",
+        "semester_fee": "₹12,000 per semester",
         "total_semesters": 10,
-        "total_fee": "₹1,00,000 - ₹1,60,000",
-        "payment_schedule": "Each semester"
+        "total_fee": "₹1,20,000",
+        "payment_schedule": [
+          "Semester 1: ₹12,000 (at admission)",
+          "Semester 2-10: ₹12,000 each semester"
+        ]
       },
+      "specializations": [
+        {
+          "name": "Architecture",
+          "code": "arch",
+          "seats": 20,
+          "placements": "75-80% placement, Avg: ₹6-8 LPA",
+          "avg_package": "₹6-8 LPA",
+          "highest_package": "₹12+ LPA",
+          "career_options": ["Architect", "Urban Planner", "Interior Designer", "CAD Specialist", "Project Manager"]
+        }
+      ],
       "documents_required": [
         "10th mark sheet",
         "12th mark sheet",
@@ -133,12 +182,7 @@
         "Domicile certificate",
         "Passport-size photographs",
         "Identity proof"
-      ],
-      "placement_info": {
-        "placement_rate": "75-80%",
-        "avg_package": "₹6-8 LPA",
-        "career_options": ["Architect", "Urban Planner", "Interior Designer", "CAD Specialist"]
-      }
+      ]
     }
   },
   "postgraduate": {
@@ -156,67 +200,81 @@
       "entrance_exam": "GATE (Graduate Aptitude Test in Engineering)",
       "counseling": "CCMT (Central Counselling for M.Tech)",
       "counseling_website": "https://ccmt.admissions.nic.in",
+      "fee_structure": {
+        "semester_fee": "₹9,000 per semester",
+        "total_semesters": 4,
+        "total_fee": "₹36,000",
+        "payment_schedule": [
+          "Semester 1: ₹9,000 (within 7 days of seat acceptance)",
+          "Semester 2: ₹9,000 (6 months after admission)",
+          "Semester 3: ₹9,000 (12 months after admission)",
+          "Semester 4: ₹9,000 (18 months after admission)"
+        ]
+      },
       "specializations": [
         {
           "name": "Computer Science & Engineering",
-          "code": "CSE",
+          "code": "cse",
           "seats": 30,
-          "specialization_areas": ["AI/ML", "Cloud Computing", "Cybersecurity", "Data Science"]
+          "specialization_areas": ["AI/ML", "Cloud Computing", "Cybersecurity", "Data Science", "IoT"],
+          "placements": "90% placement, Avg: ₹15-18 LPA",
+          "avg_package": "₹15-18 LPA",
+          "highest_package": "₹28+ LPA",
+          "top_recruiters": ["Google", "Microsoft", "Amazon", "Facebook", "Goldman Sachs", "TCS", "Infosys"],
+          "career_options": ["Senior Software Engineer", "Data Scientist", "AI/ML Engineer", "Cloud Architect"]
         },
         {
           "name": "Electronics & Communication",
-          "code": "ECE",
+          "code": "ece",
           "seats": 20,
-          "specialization_areas": ["VLSI", "Wireless Communication", "Signal Processing"]
+          "specialization_areas": ["VLSI", "Wireless Communication", "Signal Processing", "5G Technology"],
+          "placements": "85% placement, Avg: ₹12-15 LPA",
+          "avg_package": "₹12-15 LPA",
+          "highest_package": "₹24+ LPA",
+          "top_recruiters": ["Qualcomm", "Broadcom", "Intel", "Samsung", "Nokia", "TCS"],
+          "career_options": ["VLSI Design Engineer", "Embedded Systems Engineer", "RF Engineer"]
         },
         {
           "name": "Electrical Engineering",
-          "code": "EE",
+          "code": "ee",
           "seats": 20,
-          "specialization_areas": ["Power Systems", "Control Systems", "Renewable Energy"]
+          "specialization_areas": ["Power Systems", "Control Systems", "Renewable Energy", "High Voltage"],
+          "placements": "80% placement, Avg: ₹10-13 LPA",
+          "avg_package": "₹10-13 LPA",
+          "highest_package": "₹20+ LPA",
+          "top_recruiters": ["BHEL", "NTPC", "Power Grid", "GAIL", "TCS"]
         },
         {
           "name": "Mechanical Engineering",
-          "code": "ME",
+          "code": "me",
           "seats": 20,
-          "specialization_areas": ["Thermal Engineering", "CAD/CAM", "Industrial Engineering"]
+          "specialization_areas": ["Thermal Engineering", "CAD/CAM", "Industrial Engineering", "Renewable Energy"],
+          "placements": "78% placement, Avg: ₹9-12 LPA",
+          "avg_package": "₹9-12 LPA",
+          "highest_package": "₹18+ LPA",
+          "top_recruiters": ["Maruti Suzuki", "Bajaj", "Hero MotoCorp", "BHEL", "TCS"]
         },
         {
           "name": "Civil Engineering",
-          "code": "CE",
+          "code": "ce",
           "seats": 20,
-          "specialization_areas": ["Structural Engineering", "Transportation", "Water Resources"]
+          "specialization_areas": ["Structural Engineering", "Transportation", "Water Resources", "Geotechnical"],
+          "placements": "75% placement, Avg: ₹8-11 LPA",
+          "avg_package": "₹8-11 LPA",
+          "highest_package": "₹16+ LPA",
+          "top_recruiters": ["L&T", "Gammon India", "Hindustan Construction", "TCS"]
         },
         {
           "name": "Chemical Engineering",
-          "code": "CHE",
+          "code": "che",
           "seats": 15,
-          "specialization_areas": ["Process Engineering", "Environmental Engineering"]
+          "specialization_areas": ["Process Engineering", "Environmental Engineering", "Petroleum Engineering"],
+          "placements": "80% placement, Avg: ₹10-13 LPA",
+          "avg_package": "₹10-13 LPA",
+          "highest_package": "₹19+ LPA",
+          "top_recruiters": ["Reliance", "IOCL", "BPCL", "Dow Chemicals", "TCS"]
         }
       ],
-      "fee_structure": {
-        "semester_fee": "₹8,000 - ₹12,000 per semester",
-        "total_semesters": 4,
-        "total_fee": "₹32,000 - ₹48,000",
-        "payment_schedule": [
-          "Semester 1: Due at admission (within 7 days of seat acceptance)",
-          "Semester 2: Due at start of 2nd semester (6 months after admission)",
-          "Semester 3: Due at start of 3rd semester (12 months after admission)",
-          "Semester 4: Due at start of 4th semester (18 months after admission)"
-        ]
-      },
-      "fee_payment_modes": [
-        "Online: Credit/Debit Card, Net Banking",
-        "Demand Draft in favor of VNIT Nagpur",
-        "Cash payment at VNIT office",
-        "NEFT/RTGS transfer"
-      ],
-      "fee_waiver_scholarship": {
-        "merit_scholarship": "Available for top performers - waives 25-50% fee",
-        "need_based_scholarship": "Available for economically weaker students",
-        "reserved_category_benefits": "Fee concessions as per government norms",
-        "application_process": "Apply through VNIT scholarship portal after admission"
-      },
       "documents_required": [
         "Bachelor's degree certificate",
         "Bachelor's degree mark sheet",
@@ -227,32 +285,7 @@
         "Passport-size photographs",
         "Identity proof",
         "Address proof"
-      ],
-      "admission_process": [
-        "Appear for GATE examination",
-        "Get GATE score and rank",
-        "Register on CCMT portal",
-        "Fill choices for programs and colleges",
-        "Wait for seat allocation rounds",
-        "Accept allotted seat within deadline",
-        "Complete document verification",
-        "Pay semester fee",
-        "Report to VNIT for registration",
-        "Complete hostel/accommodation arrangements if needed"
-      ],
-      "placement_info": {
-        "placement_rate": "85-90%",
-        "avg_package": "₹12-15 LPA",
-        "highest_package": "₹25+ LPA",
-        "top_recruiters": [
-          "Google", "Microsoft", "Amazon", "Facebook",
-          "Goldman Sachs", "Morgan Stanley", "TCS", "Infosys"
-        ],
-        "career_opportunities": [
-          "Software Engineer", "Research Engineer", "Data Scientist",
-          "System Architect", "Technical Lead", "Researcher"
-        ]
-      }
+      ]
     },
     "m_sc": {
       "name": "Master of Science (M.Sc)",
@@ -267,42 +300,48 @@
       "entrance_exam": "IIT JAM (Joint Admission Test for Masters)",
       "counseling": "CCMN (Centralized Counselling for M.Sc)",
       "counseling_website": "https://ccmn.admissions.nic.in",
+      "fee_structure": {
+        "semester_fee": "₹8,000 per semester",
+        "total_semesters": 4,
+        "total_fee": "₹32,000",
+        "payment_schedule": [
+          "Semester 1: ₹8,000 (at admission)",
+          "Semester 2: ₹8,000 (6 months after admission)",
+          "Semester 3: ₹8,000 (12 months after admission)",
+          "Semester 4: ₹8,000 (18 months after admission)"
+        ]
+      },
       "specializations": [
         {
           "name": "Physics",
-          "code": "PHY",
+          "code": "phy",
           "seats": 15,
-          "subject_areas": ["Condensed Matter Physics", "Quantum Mechanics", "Astrophysics"]
+          "subject_areas": ["Condensed Matter Physics", "Quantum Mechanics", "Astrophysics", "Particle Physics"],
+          "placements": "65% placement, Avg: ₹6-8 LPA",
+          "avg_package": "₹6-8 LPA",
+          "highest_package": "₹14+ LPA",
+          "career_options": ["Research Scientist", "University Faculty", "Data Scientist", "Science Educator"]
         },
         {
           "name": "Chemistry",
-          "code": "CHE",
+          "code": "che",
           "seats": 15,
-          "subject_areas": ["Organic Chemistry", "Inorganic Chemistry", "Physical Chemistry"]
+          "subject_areas": ["Organic Chemistry", "Inorganic Chemistry", "Physical Chemistry", "Analytical Chemistry"],
+          "placements": "70% placement, Avg: ₹6-9 LPA",
+          "avg_package": "₹6-9 LPA",
+          "highest_package": "₹15+ LPA",
+          "career_options": ["Research Chemist", "Quality Analyst", "University Faculty", "Chemical Industry"]
         },
         {
           "name": "Mathematics",
-          "code": "MATH",
+          "code": "math",
           "seats": 15,
-          "subject_areas": ["Pure Mathematics", "Applied Mathematics", "Computational Mathematics"]
+          "subject_areas": ["Pure Mathematics", "Applied Mathematics", "Computational Mathematics", "Discrete Mathematics"],
+          "placements": "60% placement, Avg: ₹5-7 LPA",
+          "avg_package": "₹5-7 LPA",
+          "highest_package": "₹12+ LPA",
+          "career_options": ["Data Analyst", "University Faculty", "Research Mathematician", "Financial Analyst"]
         }
-      ],
-      "fee_structure": {
-        "semester_fee": "₹7,000 - ₹10,000 per semester",
-        "total_semesters": 4,
-        "total_fee": "₹28,000 - ₹40,000",
-        "payment_schedule": [
-          "Semester 1: Due at admission",
-          "Semester 2: Due at start of 2nd semester",
-          "Semester 3: Due at start of 3rd semester",
-          "Semester 4: Due at start of 4th semester"
-        ]
-      },
-      "fee_payment_modes": [
-        "Online: Credit/Debit Card, Net Banking",
-        "Demand Draft in favor of VNIT Nagpur",
-        "Cash payment at VNIT office",
-        "NEFT/RTGS transfer"
       ],
       "documents_required": [
         "Bachelor's degree certificate",
@@ -313,26 +352,7 @@
         "Domicile certificate",
         "Passport-size photographs",
         "Identity proof"
-      ],
-      "admission_process": [
-        "Appear for IIT JAM examination",
-        "Receive IIT JAM score",
-        "Register on CCMN portal",
-        "Fill course and college preferences",
-        "Participate in seat allocation",
-        "Accept allotted seat",
-        "Complete document verification",
-        "Pay admission fee",
-        "Register at VNIT"
-      ],
-      "placement_info": {
-        "placement_rate": "70-75%",
-        "avg_package": "₹6-8 LPA",
-        "career_opportunities": [
-          "Research Scientist", "University Faculty", "Data Analyst",
-          "Science Educator", "Researcher in Industry Labs"
-        ]
-      }
+      ]
     }
   },
   "general_info": {
