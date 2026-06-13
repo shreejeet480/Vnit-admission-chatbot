@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VNIT Admission Assistant — ML-powered chatbot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="app">
+
+    <!-- ============ SIDEBAR: how the ML works ============ -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">V</div>
+        <div>
+          <h1>VNIT Admission Assistant</h1>
+          <p class="tagline">Hybrid ML chatbot · Nagpur, the Orange City</p>
+        </div>
+      </div>
+
+      <div class="pipeline">
+        <p class="pipeline-label">Under the hood</p>
+        <ol>
+          <li>
+            <span class="step-name">Vectorize</span>
+            <span class="step-desc">TF-IDF on word & character n-grams (typo-tolerant)</span>
+          </li>
+          <li>
+            <span class="step-name">Classify</span>
+            <span class="step-desc">Logistic Regression over 9 intents · 0.82 macro-F1</span>
+          </li>
+          <li>
+            <span class="step-name">Fall back</span>
+            <span class="step-desc">Below-threshold confidence routes to rule-based matcher</span>
+          </li>
+        </ol>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><span class="stat-num">9</span><span class="stat-key">intents</span></div>
+        <div class="stat"><span class="stat-num">257</span><span class="stat-key">training examples</span></div>
+        <div class="stat"><span class="stat-num">0.82</span><span class="stat-key">macro F1 (5-fold CV)</span></div>
+      </div>
+
+      <p class="footnote">Every reply below shows which model answered and how sure it was — explainability built in.</p>
+    </aside>
+
+    <!-- ============ CHAT ============ -->
+    <main class="chat">
+      <div class="messages" id="messages" aria-live="polite">
+        <div class="msg bot">
+          <div class="bubble">
+            🍊 Namaste! I'm the VNIT admission assistant. Ask me about programs, eligibility, JEE/GATE cutoffs, fees, documents, counselling, or placements.
+          </div>
+        </div>
+      </div>
+
+      <div class="suggestions" id="suggestions">
+        <button class="chip">Tell me about the CSE program</button>
+        <button class="chip">What is the fee structure?</button>
+        <button class="chip">Which entrance exam do I need?</button>
+        <button class="chip">How do placements look?</button>
+      </div>
+
+      <div class="composer">
+        <input type="text" id="input" placeholder="Ask about admissions…"
+               autocomplete="off" aria-label="Your question">
+        <button id="send" aria-label="Send message">Send</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

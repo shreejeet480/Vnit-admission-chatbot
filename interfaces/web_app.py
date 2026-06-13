@@ -1,10 +1,21 @@
 """Flask Web Application Interface"""
 
+import os
+import sys
+
+# Allow running this file directly: add project root to path
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, PROJECT_ROOT)
+
 from flask import Flask, render_template, request, jsonify
 from src.chatbot import VNITChatbot
 import uuid
 
-app = Flask(__name__)
+app = Flask(
+    __name__,
+    template_folder=os.path.join(PROJECT_ROOT, "templates"),
+    static_folder=os.path.join(PROJECT_ROOT, "static"),
+)
 app.config['JSON_SORT_KEYS'] = False
 
 # Dictionary to store chatbots per session
@@ -46,6 +57,7 @@ def chat():
             'session_id': session_id,
             'response': result['response'],
             'intent': result.get('intent', 'unknown'),
+            'intent_source': result.get('intent_source', 'rules'),
             'confidence': result.get('confidence', 0),
             'suggestions': result.get('suggestions', [])
         })

@@ -5,6 +5,7 @@ import logging
 from datetime import datetime
 from typing import Dict, List
 from .intent_recognition import IntentRecognizer
+from .ml_intent_classifier import MLIntentClassifier
 from .response_generator import ResponseGenerator
 from .database import Database
 
@@ -17,6 +18,7 @@ class VNITChatbot:
         """Initialize the chatbot"""
         self.config = config or {}
         self.intent_recognizer = IntentRecognizer()
+        self.ml_classifier = MLIntentClassifier()
         self.response_generator = ResponseGenerator()
         self.db = Database()
         self.conversation_history = []
@@ -44,12 +46,25 @@ class VNITChatbot:
                 'content': user_message
             })
 
-            # Recognize intent using IntentRecognizer
-            intent_result = self.intent_recognizer.recognize(user_message)
-            intent = intent_result.get('intent', 'general')
-            confidence = intent_result.get('confidence', 0)
-            program = intent_result.get('program')
-            specialization = intent_result.get('specialization')
+            # --- HYBRID INTENT RECOGNITION ---
+            # 1) Try the ML classifier (TF-IDF + Logistic Regression)
+            ml_result = self.ml_classifier.predict(user_message)
+
+            # 2) Always run rule-based recognizer too (it extracts
+            #    program/specialization entities the ML model doesn't)
+            rule_result = self.intent_recognizer.recognize(user_message)
+            program = rule_result.get('program')
+            specialization = rule_result.get('specialization')
+
+            # 3) Pick the source: ML if confident, else regex fallback
+            if ml_result['is_confident']:
+                intent = ml_result['intent']
+                confidence = ml_result['confidence']
+                intent_source = 'ml'
+            else:
+                intent = rule_result.get('intent', 'general')
+                confidence = rule_result.get('confidence', 0)
+                intent_source = 'rules'
 
             # Generate response using ResponseGenerator
             response = self.response_generator.generate(
@@ -88,6 +103,7 @@ class VNITChatbot:
                 'program': program,
                 'specialization': specialization,
                 'confidence': confidence,
+                'intent_source': intent_source,
                 'suggestions': response.get('suggestions', [])
             }
 

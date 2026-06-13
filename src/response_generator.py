@@ -417,6 +417,28 @@ class ResponseGenerator:
         
         return response, suggestions
 
+    def _handle_placement(self, program: str = None, specialization: str = None) -> tuple:
+        """Handle placement-related queries"""
+        response = (
+            "📈 **Placements at VNIT Nagpur**\n\n"
+            "VNIT has a strong placement record across branches:\n"
+            "• Top recruiters include Amazon, Microsoft, Google, Goldman Sachs, "
+            "TCS, Infosys, L&T, and many core engineering companies\n"
+            "• CSE and ECE branches typically see the highest packages\n"
+            "• The Training & Placement Cell conducts pre-placement training, "
+            "mock interviews, and internship drives\n"
+            "• Many students also secure research internships and higher-study "
+            "admits (MS/PhD) abroad\n\n"
+            "For the latest official statistics, check the Training & Placement "
+            "section on the VNIT website (vnit.ac.in)."
+        )
+        suggestions = [
+            "Which companies recruit from VNIT?",
+            "Tell me about CSE program",
+            "What is the fee structure?"
+        ]
+        return response, suggestions
+
     def _handle_counseling(self, message: str) -> tuple:
         """Handle counseling queries"""
         response = "🎫 **Counseling Process at VNIT:**\n\n"
