@@ -46,11 +46,15 @@ def chat():
         data = request.json
         message = data.get('message', '').strip()
         session_id = data.get('session_id', str(uuid.uuid4()))
+        user_name = data.get('user_name', '').strip()
 
         if not message:
             return jsonify({'error': 'Empty message'}), 400
 
         chatbot = get_chatbot(session_id)
+        # Store the user's name for logging/tracking if provided
+        if user_name and hasattr(chatbot, 'set_user_name'):
+            chatbot.set_user_name(user_name)
         result = chatbot.process_message(message)
 
         return jsonify({
