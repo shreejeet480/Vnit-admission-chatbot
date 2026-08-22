@@ -1,5 +1,5 @@
 SERVICES:
--type web
+-type: web
 name: vnit-admission-chatbot
 runtime: python
 buildCommand: pip install -r requirements.txt
