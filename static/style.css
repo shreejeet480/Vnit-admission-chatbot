@@ -420,3 +420,30 @@ body {
   border-radius: 8px;
   background: #FFFFFF;
 }
+/* Light VNIT logo watermark on the chat area */
+.chat {
+  position: relative;
+}
+
+.chat::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  background-image: url("/static/vnit_logo.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.05;          /* very light — this is the key */
+  pointer-events: none;    /* so it doesn't block clicks */
+  z-index: 0;
+}
+
+/* Keep chat messages above the watermark */
+.messages, .suggestions, .composer {
+  position: relative;
+  z-index: 1;
+}
